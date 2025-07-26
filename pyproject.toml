@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
-dependencies = [
-    "marimo>=0.14.13",
-    "pydantic[email]>=2.11.7",
-]
+dependencies = ["marimo>=0.14.13", "pydantic[email]>=2.11.7"]
+
+[dependency-groups]
+dev = ["isort>=6.0.1", "python-lsp-server>=1.13.0", "ruff>=0.12.5"]
