@@ -18,12 +18,13 @@ def _(mo):
 
 @app.cell
 def _():
-    import marimo as mo
-
     from datetime import date
+
+    import marimo as mo
     from pydantic import ValidationError
 
-    from models import Employee, Department
+    from models import Department, Employee
+
     return Department, Employee, ValidationError, mo
 
 
@@ -38,9 +39,7 @@ def _(Department, mo):
     # Define UI elements
 
     name = mo.ui.text(label="Name")
-    email = mo.ui.text(
-        label="Email", kind="email", placeholder="email@example.com"
-    )
+    email = mo.ui.text(label="Email", kind="email", placeholder="email@example.com")
     birth_date = mo.ui.date(label="Birth Date")
     salary = mo.ui.number(label="Salary", value=0)
 
@@ -173,7 +172,6 @@ def _(mo):
 def _(Employee, ValidationError):
     # This method is more robust, as it forces the form to validate before returning a value.
 
-
     def validate_employee_detail_form(data: dict) -> str | None:
         data = data.copy()
 
@@ -201,6 +199,7 @@ def _(Employee, ValidationError):
             err_msg = "\n".join(error_list)
 
             return str(err_msg)
+
     return (validate_employee_detail_form,)
 
 
