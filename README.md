@@ -32,3 +32,7 @@ The project is managed using `uv`.
     ```sh
     uv run marimo edit ui_element_validation.py
     ```
+
+### Credit
+
+- The Pydantic model used is from Real Python's [Pydantic: Simplifying Data Validation in Python](https://realpython.com/python-pydantic/) tutorial, which provides a good introduction to Pydantic.
